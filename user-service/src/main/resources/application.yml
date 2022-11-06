@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: user-service
+
+  cloud:
+    config:
+      discovery:
+        enable: true
+        id-service: config-service
+
+  security:
+    oauth2:
+      client:
+        provider:
+          microservicios:
+            issuer-uri: http://localhost:8082/realms/DigitalMedia
+        registration:
+          gateway-service:
+            provider: microservicios
+            client-id: microservicios
+            client-secret: vk2JShO3N43msLTfmQ1Q5VEjow6QS0S2
+            authorization-grant-type: authorization_code
+            redirect-uri: 'http://localhost:8050/login/oauth2/code/keycloak'
+
+server:
+  port: 8781
+
+us:
+  keycloak:
+    server:
+      url: 'http://localhost:8082/'
+      realm: DigitalMedia
+      clientId: microservicios
+      clienSecret: vk2JShO3N43msLTfmQ1Q5VEjow6QS0S2
