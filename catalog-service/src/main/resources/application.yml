@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: catalog-service
+
+  cloud:
+    config:
+      discovery:
+        enable: true
+        id-service: config-service
+
+queue:
+  serie:
+    name: SerieQueue
+
+  movie:
+    name: MovieQueue
