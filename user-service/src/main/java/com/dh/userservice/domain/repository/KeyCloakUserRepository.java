@@ -28,6 +28,7 @@ public class KeyCloakUserRepository implements IUserRepository{
     public List<UserNotAdminDto> findAll() {
 
         List<UserRepresentation> userRepresentations = keycloak.realm(realm).users().list();
+        List<UserRepresentation> userEnable = userRepresentations.stream().filter(userRepresentation -> userRepresentation.getGroups().stream())
         //return userRepresentations.stream().map(this::toUserNotAdminDto).collect(Collectors.toList());
         List<UserNotAdminDto> userNotAdminDto = new ArrayList<>();
         for(UserRepresentation userRepresentation : userRepresentations){
