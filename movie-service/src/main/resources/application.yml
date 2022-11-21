@@ -1,22 +1,30 @@
+server:
+  port: 8001
+  servlet:
+    context-path: /movies/
+
 spring:
+  jpa:
+    open-in-view: 'false'
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: 'true'
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: update
+  datasource:
+    username: sa
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    password: sa
+  h2:
+    console:
+      enabled: 'true'
+      path: /h2-console
+
   application:
     name: movie-service
-
-  cloud:
-    config:
-      discovery:
-        enable: true
-        id-service: config-service
-
-  rabbitmq:
-    username: guest
-    password: guest
-    host: localhost
-    port: 5672
-
-queue:
-  movie:
-    name: MovieQueue
 
   security:
     oauth2:
@@ -28,10 +36,24 @@ queue:
           gateway-service:
             provider: microservicios
             client-id: microservicios
+            scope: openid, roles
             client-secret: vk2JShO3N43msLTfmQ1Q5VEjow6QS0S2
             authorization-grant-type: authorization_code
-            redirect-uri: 'http://localhost:8050/login/oauth2/code/keycloak'
+            redirect-uri: 'http://localhost:8002/login/oauth2/code/keycloak'
 
-server:
-  port: 8783
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetchRegistry: true
 
+message: Hello from Movie Server
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

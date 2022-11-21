@@ -1,0 +1,569 @@
+{
+	"info": {
+		"_postman_id": "5ab74c31-b8c0-44c6-90fd-20da32fc9692",
+		"name": "tpi-microservicios-damian-sformo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16752932"
+	},
+	"item": [
+		{
+			"name": "getTokenAdmin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "microservicios",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:8082/",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "vk2JShO3N43msLTfmQ1Q5VEjow6QS0S2",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8082/realms/DigitalMedia/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"realms",
+						"DigitalMedia",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTokenProvider",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "microservicios",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:8082/",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "provider",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "vk2JShO3N43msLTfmQ1Q5VEjow6QS0S2",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8082/realms/DigitalMedia/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"realms",
+						"DigitalMedia",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTokenClient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "microservicios",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:8082/",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "client",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "vk2JShO3N43msLTfmQ1Q5VEjow6QS0S2",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8082/realms/DigitalMedia/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"realms",
+						"DigitalMedia",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllMovies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4ZU1Ud2NsbWZnZlFYOERCN0RfYmh0RC1vT1FGeEdPZXVPekdWUzNlR28wIn0.eyJleHAiOjE2Njg5ODQ0NTUsImlhdCI6MTY2ODk4NDE1NSwianRpIjoiOTdiZTIxYTMtOWMyNS00YzcxLWI1NTMtYjk0OTc5MzQ2YjNhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9EaWdpdGFsTWVkaWEiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiYWZkNzAxN2ItNjRiOS00YWNhLWI0ODItZDA0M2YxOTM4ZjY5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNpb3MiLCJzZXNzaW9uX3N0YXRlIjoiMzIzYmVhMTQtYjY0OC00ZjM4LWFjNDAtMTdjMjk5MTY3MWQzIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRpZ2l0YWxtZWRpYSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCByb2xlcyBwcm9maWxlIiwic2lkIjoiMzIzYmVhMTQtYjY0OC00ZjM4LWFjNDAtMTdjMjk5MTY3MWQzIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJ0w61uIExvcGV6IiwiZ3JvdXBzIjpbIi9hZG1pbiJdLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiIsImdpdmVuX25hbWUiOiJNYXJ0w61uIiwiZmFtaWx5X25hbWUiOiJMb3BleiIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIn0.kE7kRsBjD9hS94y9eyUez0IfyIgQcI4zSCgSHmIcHnSHH-XTKD4pue7QVuD8DqgEyLS1hEvFdfp8jpVQStFkxYMM_32x-A4fnz3Q_su9De8ogcoRzUpHLWmATBSfkUzVBpk017JMYmY2ZOyD-u7gDqykiRfJi8EPQV_-IatA7mNgg2hUw4xgodvXroD5pA_A-uxbGRObInJum0pUdp4zJnn5kxwJDghfmo2wbTpZDWOSZ3dDT9e9ImO40lu67DHURoxcDv3WShXCqd-3okGANOTEs6B9hDW2IgG3y6R4WZ24iz3XZ8CkAzS-zNZ4dPMtibLp819lcS35DP_eAZTp-w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8002/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveMovie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4ZU1Ud2NsbWZnZlFYOERCN0RfYmh0RC1vT1FGeEdPZXVPekdWUzNlR28wIn0.eyJleHAiOjE2Njg5ODE4MzEsImlhdCI6MTY2ODk4MTUzMSwianRpIjoiYTRmYjQ1MzktMTY0Mi00MzNjLWI2M2MtMTE1NDU4YmZjNzk3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9EaWdpdGFsTWVkaWEiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiYWZkNzAxN2ItNjRiOS00YWNhLWI0ODItZDA0M2YxOTM4ZjY5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNpb3MiLCJzZXNzaW9uX3N0YXRlIjoiNGNiYmYzZGItNTViOS00NTkwLTkyMDEtYzNkMWI3YTA3OTMwIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRpZ2l0YWxtZWRpYSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCByb2xlcyBwcm9maWxlIiwic2lkIjoiNGNiYmYzZGItNTViOS00NTkwLTkyMDEtYzNkMWI3YTA3OTMwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJ0w61uIExvcGV6IiwiZ3JvdXBzIjpbIi9hZG1pbiJdLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiIsImdpdmVuX25hbWUiOiJNYXJ0w61uIiwiZmFtaWx5X25hbWUiOiJMb3BleiIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIn0.FRpLKb29piV4BBIAkUAtsGJr35wQzxR5bCt_3hlOPWSTBqA8_myR8-HQHGtZUPPueIU_RCCb3uUW0cyUPQkB-6bGpNRrdbHWeucSGrNlXs4R6w0TxjQgKkEjTMAAIqRvD5XRPM2ENhus9kUPTzUy-50bD8a1ijpzWHA4XQHR3q4YqsGzZqcDyKvpgEwOL0mNidUw-R2E5WoAaux7lRgBgkK8dDHaKF3P3CdE9Ky6OVbJb-_nvzrkB8lu-HIMQSxAAPNVd7pQVOAK7sr5OZNORk-iUHYVzbXHEKzdAjA8q3y-n9eCL4CKXS0KlbriFdJX8QNyJVTSzwml3GPRAtbd0g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"El secreto de sus ojos\",\r\n    \"director\": \"Juan José Campanella\",\r\n    \"yearPremiere\": 2009,\r\n    \"poster\": \"https://m.media-amazon.com/poster/M/ssdfwasd23@@._V1_SX300.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8002/movies/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"movies",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveComment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4ZU1Ud2NsbWZnZlFYOERCN0RfYmh0RC1vT1FGeEdPZXVPekdWUzNlR28wIn0.eyJleHAiOjE2Njg5ODE2NjIsImlhdCI6MTY2ODk4MTM2MiwianRpIjoiNzczNzVkMGItZWJmNi00NjFhLWFmYzItZWEzMGI1MmIyN2M5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9EaWdpdGFsTWVkaWEiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiYWZkNzAxN2ItNjRiOS00YWNhLWI0ODItZDA0M2YxOTM4ZjY5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNpb3MiLCJzZXNzaW9uX3N0YXRlIjoiNTk2NDVjMWEtZjAxOC00MjVhLWExODEtZWEwYTIwNzBlOTBkIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRpZ2l0YWxtZWRpYSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCByb2xlcyBwcm9maWxlIiwic2lkIjoiNTk2NDVjMWEtZjAxOC00MjVhLWExODEtZWEwYTIwNzBlOTBkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJ0w61uIExvcGV6IiwiZ3JvdXBzIjpbIi9hZG1pbiJdLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiIsImdpdmVuX25hbWUiOiJNYXJ0w61uIiwiZmFtaWx5X25hbWUiOiJMb3BleiIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIn0.WByrYQjUw2rWkKCLYQX_XFiwSeOUi1dJFNJx3Ix275GGtE_ZLsqo9A3dgj1WZDL0Se694pSXzg3rGdFfK-vySkC-wlUhqUE5WfGf1v47pE6bU7Suv1teklXtTKaWeMCYP77gYUWGVDGiYq43fpqqX1YHuQOw616yrp11jKIDYkldx1T-0oNQay3eHXx_N9WvX8XrZL5LtjyWkefKY26PFBzvO51U4H2uCmfG3dCzngp5Y_EztOfGV8biGu29p5S0aFxbV9ggtugqTa4xE7PfAjPq_uWzRL-1Q9ASD2oXFhgZEvfJUDCj7VUDkCsxxbhakEytTMxU_HwaLybpzHd0cw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"bad movie\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8002/movies/save/1/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"movies",
+						"save",
+						"1",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateMovie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4ZU1Ud2NsbWZnZlFYOERCN0RfYmh0RC1vT1FGeEdPZXVPekdWUzNlR28wIn0.eyJleHAiOjE2Njg5ODIyNDMsImlhdCI6MTY2ODk4MTk0MywianRpIjoiM2U4MmIyZTctNjM2NS00OGQxLTk1NGQtZjc3NzllMDk0NTIzIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9EaWdpdGFsTWVkaWEiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiYWZkNzAxN2ItNjRiOS00YWNhLWI0ODItZDA0M2YxOTM4ZjY5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNpb3MiLCJzZXNzaW9uX3N0YXRlIjoiOTIxM2YwNmUtYTYzNi00YWYwLTllZDYtNmRjNjYzZjhmN2U2IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRpZ2l0YWxtZWRpYSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCByb2xlcyBwcm9maWxlIiwic2lkIjoiOTIxM2YwNmUtYTYzNi00YWYwLTllZDYtNmRjNjYzZjhmN2U2IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJ0w61uIExvcGV6IiwiZ3JvdXBzIjpbIi9hZG1pbiJdLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiIsImdpdmVuX25hbWUiOiJNYXJ0w61uIiwiZmFtaWx5X25hbWUiOiJMb3BleiIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIn0.gdzHzS9omcmoFSKd8D1kfuEIAeLdpXqoAA8wXFtgNdCJOJFwWJPaYf7FIlWv-vC98Gw7OOl4eaYoxmBYvWf8f8eqD3jmS4Q50P_wr0jA0eMQ70mJTHRYB_uPYRkMbGIP3n4UsrQuYapURvxRXlxgTntMVQf9QrbB5GnYrcTjbWmpoh-Q-MBxxSXD_34Iel61Nz9gAUrAeMNsnYwqJXqhNC32cFVYmvGBYZTu8AclZPiVJrYS1P74xFG-O9qBmGvlJvqYZ7LEA1Hh2idB7ngbE8zzNBSVRqrfWTpPC9xLdD1f3UjeixKM2_FekfpZ8b49z3sHMjO5Mn6xQZfHcWvD6A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Resident Evil: Apocalypse\",\r\n    \"director\": \"Paul W.S. Anderson\",\r\n    \"yearPremiere\": 2007,\r\n    \"poster\": \"not poster\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8002/movies/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"movies",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4ZU1Ud2NsbWZnZlFYOERCN0RfYmh0RC1vT1FGeEdPZXVPekdWUzNlR28wIn0.eyJleHAiOjE2Njg4MTU3MTIsImlhdCI6MTY2ODgxNTQxMSwianRpIjoiNzZhNjNiZmUtZTgyNC00YjNiLTkwODQtZDM1ZDI0NzFiM2Q0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9EaWdpdGFsTWVkaWEiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiYWZkNzAxN2ItNjRiOS00YWNhLWI0ODItZDA0M2YxOTM4ZjY5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNpb3MiLCJzZXNzaW9uX3N0YXRlIjoiZTJiZDQyN2YtODI0My00ZjFjLWExMTktNjI3NzJkMTk2YzlmIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRpZ2l0YWxtZWRpYSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCByb2xlcyBwcm9maWxlIiwic2lkIjoiZTJiZDQyN2YtODI0My00ZjFjLWExMTktNjI3NzJkMTk2YzlmIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJhZG1pbiBhZG1pbiIsImdyb3VwcyI6WyIvYWRtaW4iXSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4iLCJnaXZlbl9uYW1lIjoiYWRtaW4iLCJmYW1pbHlfbmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhZG1pbiJ9.Z1p6ZYRK-CR1v2DyocTszkxHPjjgTDNM9AXbHNDXP0en9iIJTqzdHylcw1QLzNNYwW8RGHpPPi3HvgteeB8kfLAhy4tmQFpVLYtJUeaLAz2FnDC38_P_24g1d1TY7V0-j73pilajSZwIUj4Y3POZE5-_ikRnChn3NlWGVoyURJDIUgfeIegrpcuQJCwaxJs9AzoGIzUlDwF9_71T01Bu7IuaTyl2uquGQGqhSddzpRewQcqAU6Gi5IGKpbhPPlm13MRKA6v2BHN4TCOc1HT86mxvLfYKS-qOqHrF43KhPknvHe11jAbs13m78dyj-aywhLgbLuJzTDGAUT4mUxIVFg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8002/movies/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"movies",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findUserNotAdmin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4ZU1Ud2NsbWZnZlFYOERCN0RfYmh0RC1vT1FGeEdPZXVPekdWUzNlR28wIn0.eyJleHAiOjE2Njg5OTI2NjYsImlhdCI6MTY2ODk5MjM2NiwianRpIjoiOWU0MjBhM2YtNjY4Yi00MTk1LTk4ZjItZTczZGU2YTAzMDBhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9EaWdpdGFsTWVkaWEiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiYWZkNzAxN2ItNjRiOS00YWNhLWI0ODItZDA0M2YxOTM4ZjY5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNpb3MiLCJzZXNzaW9uX3N0YXRlIjoiNTVmY2QwNjktNmNhNy00Zjk2LThmNDktYWZhYzIzYTU4NTQxIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRpZ2l0YWxtZWRpYSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCByb2xlcyBwcm9maWxlIiwic2lkIjoiNTVmY2QwNjktNmNhNy00Zjk2LThmNDktYWZhYzIzYTU4NTQxIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJ0w61uIExvcGV6IiwiZ3JvdXBzIjpbIi9hZG1pbiJdLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiIsImdpdmVuX25hbWUiOiJNYXJ0w61uIiwiZmFtaWx5X25hbWUiOiJMb3BleiIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIn0.hHGPYDHJRw6N2eH7AMnV_9OB7-OlYWKXztDfq_bw9w-_QWAc1urL9qdipaGHKz-ExlwI5NeTHVDw3QwRDs4z3eKrlnWp4QXv8_Ks7W2H8qYzrsTuyllX8HKdvT5mDJjvHlf43G68rbancfHAjrRhp1ttfqrdJLzBSYmgoWUtEfq5NsKFHNdZo9pfwr_TbIRBKOwNgkh7TtDD-uigwIl3AMhW9kjvUb_bZa7Q1puStyTAkeNcLNX6jU0EWCwh3DWZjSlaaTRCPX03AkTm6qJ4Vx4EEYzJTCGiNLNLI45_LCjdlzYUwOQjf2sHP74rgkl91elamtnH911ictL_TiL5zw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8781/users/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8781",
+					"path": [
+						"users",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findUserById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4ZU1Ud2NsbWZnZlFYOERCN0RfYmh0RC1vT1FGeEdPZXVPekdWUzNlR28wIn0.eyJleHAiOjE2Njg5OTI2NjYsImlhdCI6MTY2ODk5MjM2NiwianRpIjoiOWU0MjBhM2YtNjY4Yi00MTk1LTk4ZjItZTczZGU2YTAzMDBhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9EaWdpdGFsTWVkaWEiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiYWZkNzAxN2ItNjRiOS00YWNhLWI0ODItZDA0M2YxOTM4ZjY5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNpb3MiLCJzZXNzaW9uX3N0YXRlIjoiNTVmY2QwNjktNmNhNy00Zjk2LThmNDktYWZhYzIzYTU4NTQxIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRpZ2l0YWxtZWRpYSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCByb2xlcyBwcm9maWxlIiwic2lkIjoiNTVmY2QwNjktNmNhNy00Zjk2LThmNDktYWZhYzIzYTU4NTQxIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJ0w61uIExvcGV6IiwiZ3JvdXBzIjpbIi9hZG1pbiJdLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiIsImdpdmVuX25hbWUiOiJNYXJ0w61uIiwiZmFtaWx5X25hbWUiOiJMb3BleiIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIn0.hHGPYDHJRw6N2eH7AMnV_9OB7-OlYWKXztDfq_bw9w-_QWAc1urL9qdipaGHKz-ExlwI5NeTHVDw3QwRDs4z3eKrlnWp4QXv8_Ks7W2H8qYzrsTuyllX8HKdvT5mDJjvHlf43G68rbancfHAjrRhp1ttfqrdJLzBSYmgoWUtEfq5NsKFHNdZo9pfwr_TbIRBKOwNgkh7TtDD-uigwIl3AMhW9kjvUb_bZa7Q1puStyTAkeNcLNX6jU0EWCwh3DWZjSlaaTRCPX03AkTm6qJ4Vx4EEYzJTCGiNLNLI45_LCjdlzYUwOQjf2sHP74rgkl91elamtnH911ictL_TiL5zw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8781/users/admin/afd7017b-64b9-4aca-b482-d043f1938f69",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8781",
+					"path": [
+						"users",
+						"admin",
+						"afd7017b-64b9-4aca-b482-d043f1938f69"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findUserByUserName",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4ZU1Ud2NsbWZnZlFYOERCN0RfYmh0RC1vT1FGeEdPZXVPekdWUzNlR28wIn0.eyJleHAiOjE2Njg5OTAyNjksImlhdCI6MTY2ODk4OTk2OSwianRpIjoiODhlYzhlMzEtMDU3Ny00ZDI4LTgyNGMtMzA1ZGQyZTRjMWNlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9EaWdpdGFsTWVkaWEiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiYWZkNzAxN2ItNjRiOS00YWNhLWI0ODItZDA0M2YxOTM4ZjY5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNpb3MiLCJzZXNzaW9uX3N0YXRlIjoiM2RkZDg1NDItYjMwNy00OTgxLWJlYmItMGIxM2MyYzg4ZmJhIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRpZ2l0YWxtZWRpYSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCByb2xlcyBwcm9maWxlIiwic2lkIjoiM2RkZDg1NDItYjMwNy00OTgxLWJlYmItMGIxM2MyYzg4ZmJhIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJ0w61uIExvcGV6IiwiZ3JvdXBzIjpbIi9hZG1pbiJdLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiIsImdpdmVuX25hbWUiOiJNYXJ0w61uIiwiZmFtaWx5X25hbWUiOiJMb3BleiIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIn0.RDF7NJBTKSpBrLCKVzM8zJORThpAIKc83Po2tMm2hcQKzVazG51BpHvxZphSxS7SvYBgY6emNlOB8drjO4DL9gxvmxqTo-V6zZWd8buyQDMm36uhJHWBFa_65YygKJQIZSyMJzWZ_EXsEkcnSoEGOGCU6dXWp4wOlUVOh1Il6YoqZxgS28VYaFHtJMJzhIVc-WvZZ6x3cK6Y2xNhe4e4hEFwmcLSHtDiYMyH-ufOl-mOJLU5IgqVY8RnOvIhtBf4N8ZcUeTCC2lUWB5KsqbWdLBwBJy2qyFzlrRgF-Bes6TvL8rPZCWMrWyQkE67zrad5ils3J4DYA9nvdOXLLxL4g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8781/users/userName/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8781",
+					"path": [
+						"users",
+						"userName",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveBill",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4ZU1Ud2NsbWZnZlFYOERCN0RfYmh0RC1vT1FGeEdPZXVPekdWUzNlR28wIn0.eyJleHAiOjE2Njg5NzY5OTMsImlhdCI6MTY2ODk3NjY5MywianRpIjoiYWY5NmZkMmUtOTg4ZS00Mzc2LThhYWItYTM1YjJkODUxNjJhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9EaWdpdGFsTWVkaWEiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiOTExY2NkM2QtODEyOC00NzBhLWJiYTQtYTNhZjFlODZlOWE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNpb3MiLCJzZXNzaW9uX3N0YXRlIjoiYjJkYjhmZDktMzgwZi00YTI5LTkzNTItMjExMWQ2YjAzOWE5IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRpZ2l0YWxtZWRpYSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCByb2xlcyBwcm9maWxlIiwic2lkIjoiYjJkYjhmZDktMzgwZi00YTI5LTkzNTItMjExMWQ2YjAzOWE5IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJMdWNhcyBDYXN0cm8iLCJncm91cHMiOlsiL3Byb3ZpZGVyIl0sInByZWZlcnJlZF91c2VybmFtZSI6InByb3ZpZGVyIiwiZ2l2ZW5fbmFtZSI6Ikx1Y2FzIiwiZmFtaWx5X25hbWUiOiJDYXN0cm8iLCJlbWFpbCI6InByb3ZpZGVyQHByb3ZpZGVyLmNvbSJ9.Fs-8X7G3-uypFnGaNe5PYN4CTbtmpIylHJpTc6QDBhA-vpCiTXp2a3mzFO_3xyOEXjzT6SyKAuB3WPgF3FQljT_BBSb-Bbp7q48O45zajTklSs23nKBjaCHNfcPEDadH3LAQH0kgC7UsSSDARcgNOQJeEqT8ld1pSu_p68NJESqww1MMS7rSAQTwG_cGc1MTIRubVpvX8f10Y_5HQy-4yowV7K5Lii0iPHK4NJgqdj6KW6rTDo2d00FkmB8hiCZKPN4brXcRzGyApHVAf2rbj2tmiFuvHSpABblK7R1PDwSmdihEynwGuiHYhb3XC4YB6XosaKu7rymG_EogngXV6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"billingDate\": \"2022-12-12\",\r\n    \"customerBill\": \"provider\",\r\n    \"productBill\": \"product 01\",\r\n    \"totalPrice\": 200.75\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8031/bills/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8031",
+					"path": [
+						"bills",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBillByUsername",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4ZU1Ud2NsbWZnZlFYOERCN0RfYmh0RC1vT1FGeEdPZXVPekdWUzNlR28wIn0.eyJleHAiOjE2Njg5NzY5OTMsImlhdCI6MTY2ODk3NjY5MywianRpIjoiYWY5NmZkMmUtOTg4ZS00Mzc2LThhYWItYTM1YjJkODUxNjJhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9EaWdpdGFsTWVkaWEiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiOTExY2NkM2QtODEyOC00NzBhLWJiYTQtYTNhZjFlODZlOWE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNpb3MiLCJzZXNzaW9uX3N0YXRlIjoiYjJkYjhmZDktMzgwZi00YTI5LTkzNTItMjExMWQ2YjAzOWE5IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRpZ2l0YWxtZWRpYSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCByb2xlcyBwcm9maWxlIiwic2lkIjoiYjJkYjhmZDktMzgwZi00YTI5LTkzNTItMjExMWQ2YjAzOWE5IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJMdWNhcyBDYXN0cm8iLCJncm91cHMiOlsiL3Byb3ZpZGVyIl0sInByZWZlcnJlZF91c2VybmFtZSI6InByb3ZpZGVyIiwiZ2l2ZW5fbmFtZSI6Ikx1Y2FzIiwiZmFtaWx5X25hbWUiOiJDYXN0cm8iLCJlbWFpbCI6InByb3ZpZGVyQHByb3ZpZGVyLmNvbSJ9.Fs-8X7G3-uypFnGaNe5PYN4CTbtmpIylHJpTc6QDBhA-vpCiTXp2a3mzFO_3xyOEXjzT6SyKAuB3WPgF3FQljT_BBSb-Bbp7q48O45zajTklSs23nKBjaCHNfcPEDadH3LAQH0kgC7UsSSDARcgNOQJeEqT8ld1pSu_p68NJESqww1MMS7rSAQTwG_cGc1MTIRubVpvX8f10Y_5HQy-4yowV7K5Lii0iPHK4NJgqdj6KW6rTDo2d00FkmB8hiCZKPN4brXcRzGyApHVAf2rbj2tmiFuvHSpABblK7R1PDwSmdihEynwGuiHYhb3XC4YB6XosaKu7rymG_EogngXV6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8031/bills/detail/provider",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8031",
+					"path": [
+						"bills",
+						"detail",
+						"provider"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBill",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4ZU1Ud2NsbWZnZlFYOERCN0RfYmh0RC1vT1FGeEdPZXVPekdWUzNlR28wIn0.eyJleHAiOjE2Njg5NzY5OTMsImlhdCI6MTY2ODk3NjY5MywianRpIjoiYWY5NmZkMmUtOTg4ZS00Mzc2LThhYWItYTM1YjJkODUxNjJhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9EaWdpdGFsTWVkaWEiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiOTExY2NkM2QtODEyOC00NzBhLWJiYTQtYTNhZjFlODZlOWE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNpb3MiLCJzZXNzaW9uX3N0YXRlIjoiYjJkYjhmZDktMzgwZi00YTI5LTkzNTItMjExMWQ2YjAzOWE5IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRpZ2l0YWxtZWRpYSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCByb2xlcyBwcm9maWxlIiwic2lkIjoiYjJkYjhmZDktMzgwZi00YTI5LTkzNTItMjExMWQ2YjAzOWE5IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJMdWNhcyBDYXN0cm8iLCJncm91cHMiOlsiL3Byb3ZpZGVyIl0sInByZWZlcnJlZF91c2VybmFtZSI6InByb3ZpZGVyIiwiZ2l2ZW5fbmFtZSI6Ikx1Y2FzIiwiZmFtaWx5X25hbWUiOiJDYXN0cm8iLCJlbWFpbCI6InByb3ZpZGVyQHByb3ZpZGVyLmNvbSJ9.Fs-8X7G3-uypFnGaNe5PYN4CTbtmpIylHJpTc6QDBhA-vpCiTXp2a3mzFO_3xyOEXjzT6SyKAuB3WPgF3FQljT_BBSb-Bbp7q48O45zajTklSs23nKBjaCHNfcPEDadH3LAQH0kgC7UsSSDARcgNOQJeEqT8ld1pSu_p68NJESqww1MMS7rSAQTwG_cGc1MTIRubVpvX8f10Y_5HQy-4yowV7K5Lii0iPHK4NJgqdj6KW6rTDo2d00FkmB8hiCZKPN4brXcRzGyApHVAf2rbj2tmiFuvHSpABblK7R1PDwSmdihEynwGuiHYhb3XC4YB6XosaKu7rymG_EogngXV6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8031/bills/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8031",
+					"path": [
+						"bills",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

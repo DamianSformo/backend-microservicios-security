@@ -1,37 +1,34 @@
 package com.dh.movieservice.domain.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
-public class Movie implements Serializable {
-
-    @Serial
-	private static final long serialVersionUID = 1L;
+@Table(name = "movies")
+@Data
+public class Movie {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @SequenceGenerator(name = "expenseSequence",sequenceName = "expenseSequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "expenseSequence")
+    private Long imdbId;
 
-    private String name;
+    private String title;
 
-    @Basic(fetch = FetchType.LAZY)
-    private String genre;
+    private String director;
 
-    @Basic(fetch = FetchType.LAZY)
-    private String urlStream;
+    private String yearPremiere;
+
+    private String poster;
+
+    @OneToMany(mappedBy = "movie", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @ToString.Exclude
+    private List<Comment> comments;
 
 }

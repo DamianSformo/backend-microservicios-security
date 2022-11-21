@@ -2,28 +2,26 @@ spring:
   application:
     name: user-service
 
-  cloud:
-    config:
-      discovery:
-        enable: true
-        id-service: config-service
-
   security:
     oauth2:
       client:
         provider:
           microservicios:
             issuer-uri: http://localhost:8082/realms/DigitalMedia
+            jwkSetUri: http://localhost:8082/realms/DigitalMedia/protocol/openid-connect/certs
         registration:
           gateway-service:
             provider: microservicios
             client-id: microservicios
+            scope: openid, roles
             client-secret: vk2JShO3N43msLTfmQ1Q5VEjow6QS0S2
-            authorization-grant-type: authorization_code
-            redirect-uri: 'http://localhost:8050/login/oauth2/code/keycloak'
+            authorization-grant-type: client_credentials
+            redirect-uri: 'http://localhost:8781/login/oauth2/code/keycloak'
 
 server:
   port: 8781
+  servlet:
+    context-path: /users/
 
 us:
   keycloak:
@@ -32,3 +30,11 @@ us:
       realm: DigitalMedia
       clientId: microservicios
       clienSecret: vk2JShO3N43msLTfmQ1Q5VEjow6QS0S2
+
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

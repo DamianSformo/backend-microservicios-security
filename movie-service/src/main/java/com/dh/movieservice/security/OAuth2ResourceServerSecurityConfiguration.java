@@ -15,7 +15,7 @@ public class OAuth2ResourceServerSecurityConfiguration extends WebSecurityConfig
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http.oauth2ResourceServer().jwt().jwtAuthenticationConverter(new KeyCloakJwtAuthenticationConverter());
-    http.authorizeRequests().anyRequest().authenticated();
+    http.authorizeRequests().antMatchers("/h2-console/**", "movies/h2-console/**").permitAll().anyRequest().authenticated();
   }
   @Bean
   public JwtDecoder jwtDecoder() {

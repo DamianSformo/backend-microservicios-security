@@ -1,41 +1,43 @@
 package com.dh.userservice.api.service;
 
-import com.dh.userservice.Exceptions.BadRequestException;
 import com.dh.userservice.Exceptions.ResourceNotFoundException;
-import com.dh.userservice.domain.dto.UserNotAdminDto;
-import com.dh.userservice.domain.dto.UserShowDto;
-import com.dh.userservice.domain.model.AuthenticationRequest;
-import com.dh.userservice.domain.model.Rol;
+import com.dh.userservice.domain.dto.UserResponseDetailDto;
+import com.dh.userservice.domain.dto.UserResponseDto;
+import com.dh.userservice.domain.mapper.UserMapper;
 import com.dh.userservice.domain.model.User;
-import com.dh.userservice.domain.model.UserRoles;
 import com.dh.userservice.domain.repository.IUserRepository;
-import com.dh.userservice.shared.GenericServiceImpl;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.keycloak.representations.idm.UserRepresentation;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class UserService{
+public class UserService implements IUserService{
 
     private final IUserRepository userRepository;
 
-    public List<UserNotAdminDto> findAll(){
-        return userRepository.findAll();
+    public List<UserResponseDto> findNotAdmin(){
+        return userRepository.findNotAdmin();
     }
 
-    public UserNotAdminDto findById(String id){
+    public UserResponseDetailDto findById(String id){
         return userRepository.findById(id);
     }
 
-    public List<UserNotAdminDto> findByName(String name){
-        return userRepository.findByName(name);
+    public UserResponseDetailDto findByUserName(String userName) {
+        return userRepository.findByUserName(userName);
     }
 
+    @Override
+    public User save(User entity) {
+        return null;
+    }
+
+    @Override
+    public void delete(Long aLong) throws ResourceNotFoundException {
+    }
 }
