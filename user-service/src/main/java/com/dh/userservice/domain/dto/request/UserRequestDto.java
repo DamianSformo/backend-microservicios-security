@@ -1,4 +1,4 @@
-package com.dh.userservice.domain.dto;
+package com.dh.userservice.domain.dto.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;

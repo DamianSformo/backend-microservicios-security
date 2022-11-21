@@ -1,11 +1,10 @@
 package com.dh.userservice.domain.repository;
 
-import com.dh.userservice.domain.dto.UserResponseDetailDto;
-import com.dh.userservice.domain.dto.UserResponseDto;
+import com.dh.userservice.domain.dto.response.UserResponseDetailDto;
+import com.dh.userservice.domain.dto.response.UserResponseDto;
 
 import com.dh.userservice.domain.mapper.UserMapper;
 import org.keycloak.admin.client.Keycloak;
-import org.keycloak.admin.client.resource.UserResource;
 import org.keycloak.representations.idm.GroupRepresentation;
 import org.keycloak.representations.idm.UserRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Repository
 public class KeyCloakUserRepository implements IUserRepository {

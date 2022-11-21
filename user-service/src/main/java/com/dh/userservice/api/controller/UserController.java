@@ -1,8 +1,8 @@
 package com.dh.userservice.api.controller;
 
 import com.dh.userservice.api.service.UserService;
-import com.dh.userservice.domain.dto.UserResponseDetailDto;
-import com.dh.userservice.domain.dto.UserResponseDto;
+import com.dh.userservice.domain.dto.response.UserResponseDetailDto;
+import com.dh.userservice.domain.dto.response.UserResponseDto;
 
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.security.access.prepost.PreAuthorize;

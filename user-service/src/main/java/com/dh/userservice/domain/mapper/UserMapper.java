@@ -1,8 +1,8 @@
 package com.dh.userservice.domain.mapper;
 
 
-import com.dh.userservice.domain.dto.UserResponseDetailDto;
-import com.dh.userservice.domain.dto.UserResponseDto;
+import com.dh.userservice.domain.dto.response.UserResponseDetailDto;
+import com.dh.userservice.domain.dto.response.UserResponseDto;
 import org.keycloak.representations.idm.UserRepresentation;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
